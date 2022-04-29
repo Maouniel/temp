@@ -5564,7 +5564,7 @@ button[data-username='chiru63']>p,
 button[data-username='amor_r7']>p,
 button[data-username='kevindeleon200']>p,
 button[data-username='kskskskskksks121313']>p
-{color:var(--bots-color);}
+{color:#444444;}
 
 button[aria-label*='tteyyd'],
 button[aria-label*='twitchdetails'],
@@ -11132,4 +11132,4 @@ button[aria-label*='chiru63'],
 button[aria-label*='amor_r7'],
 button[aria-label*='kevindeleon200'],
 button[aria-label*='kskskskskksks121313']
-{color:var(--bots-color);}
+{color:#444444;}
