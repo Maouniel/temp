@@ -1,3 +1,4 @@
+button[data-username='donationalerts_']>p,
 button[data-username='tteyyd']>p,
 button[data-username='twitchdetails']>p,
 button[data-username='0liviajadeee']>p,
@@ -5566,6 +5567,7 @@ button[data-username='kevindeleon200']>p,
 button[data-username='kskskskskksks121313']>p
 {color:var(--bots-color);}
 
+button[aria-label*='donationalerts_'],
 button[aria-label*='tteyyd'],
 button[aria-label*='twitchdetails'],
 button[aria-label*='0liviajadeee'],
