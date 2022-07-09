@@ -19017,7 +19017,6 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.regexmatchat,
 	cr.system_object.prototype.exps.newline,
 	cr.system_object.prototype.exps.regexreplace,
-	cr.system_object.prototype.exps.dt,
 	cr.system_object.prototype.cnds.Repeat,
 	cr.system_object.prototype.exps.tokencount,
 	cr.system_object.prototype.exps.left,
