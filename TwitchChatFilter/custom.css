@@ -1,0 +1,30 @@
+#btn,#list,#textbox {
+	outline: none;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: "Segoe UI";
+	border-radius: 3px;
+	background-color: #363636;
+	color: #d6d6d6;
+	border: 1px solid #696969;
+}
+
+#btn, #list {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+#btn:hover {
+  background-color: #454545;
+}
+
+#btn:disabled, #list:disabled {
+  background-color: #1c1c1c;
+  border-color: black;
+  color: #333333;
+  cursor: default;
+}
+
+#textbox {
+	padding: 5px;
+}
