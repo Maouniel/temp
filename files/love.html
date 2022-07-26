@@ -1,0 +1,18 @@
+<html>
+<head>
+	<script src='http://davidbau.com/encode/seedrandom.js'></script>
+</head>
+<body>
+<script>
+	var sp = new URLSearchParams(window.location.search);
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0');
+	var yyyy = today.getFullYear();
+	var curDate = yyyy+mm+dd
+	console.log(sp.get('1')+sp.get('2')+curDate);
+	Math.seedrandom(sp.get('1')+sp.get('2')+curDate);
+	document.write(Math.round(Math.random()*100));
+</script>
+</body>
+</html>
