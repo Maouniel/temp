@@ -3406,6 +3406,27 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		this.isAppMobi = (typeof window["AppMobi"] !== "undefined" || this.isDirectCanvas);
 		this.isCocoonJs = !!window["c2cocoonjs"];
 		this.isEjecta = !!window["c2ejecta"];
+		if (this.isCocoonJs)
+		{
+			CocoonJS["App"]["onSuspended"].addEventListener(function() {
+				self["setSuspended"](true);
+			});
+			CocoonJS["App"]["onActivated"].addEventListener(function () {
+				self["setSuspended"](false);
+			});
+		}
+		if (this.isEjecta)
+		{
+			document.addEventListener("pagehide", function() {
+				self["setSuspended"](true);
+			});
+			document.addEventListener("pageshow", function() {
+				self["setSuspended"](false);
+			});
+			document.addEventListener("resize", function () {
+				self["setSize"](window.innerWidth, window.innerHeight);
+			});
+		}
 		this.isDomFree = (this.isDirectCanvas || this.isCocoonJs || this.isEjecta);
 		this.isMicrosoftEdge = /edge\//i.test(navigator.userAgent);
 		this.isIE = (/msie/i.test(navigator.userAgent) || /trident/i.test(navigator.userAgent) || /iemobile/i.test(navigator.userAgent)) && !this.isMicrosoftEdge;
@@ -3688,7 +3709,24 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		var attribs;
 		if (this.fullscreen_mode > 0)
 			this["setSize"](window.innerWidth, window.innerHeight, true);
-		, false);
+		this.canvas.addEventListener("webglcontextlost", function (ev) {
+			ev.preventDefault();
+			self.onContextLost();
+			cr.logexport("[Construct 2] WebGL context lost");
+			window["cr_setSuspended"](true);		// stop rendering
+		}, false);
+		this.canvas.addEventListener("webglcontextrestored", function (ev) {
+			self.glwrap.initState();
+			self.glwrap.setSize(self.glwrap.width, self.glwrap.height, true);
+			self.layer_tex = null;
+			self.layout_tex = null;
+			self.fx_tex[0] = null;
+			self.fx_tex[1] = null;
+			self.onContextRestored();
+			self.redraw = true;
+			cr.logexport("[Construct 2] WebGL context restored");
+			window["cr_setSuspended"](false);		// resume rendering
+		}, false);
 		try {
 			if (this.enableWebGL && (this.isCocoonJs || this.isEjecta || !this.isDomFree))
 			{
@@ -3838,6 +3876,19 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 				cr.logexport("Reloading for continuous preview");
 				this.loadFromSlot = "__c2_continuouspreview";
 				this.suspendDrawing = true;
+			}
+			if (this.pauseOnBlur && !this.isMobile)
+			{
+				jQuery(window).focus(function ()
+				{
+					self["setSuspended"](false);
+				});
+				jQuery(window).blur(function ()
+				{
+					var parent = window.parent;
+					if (!parent || !parent.document.hasFocus())
+						self["setSuspended"](true);
+				});
 			}
 		}
 		window.addEventListener("blur", function () {
@@ -4134,7 +4185,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		if (s && !this.isSuspended)
 		{
 			cr.logexport("[Construct 2] Suspending");
-			this.isSuspended = false;			// next tick will be last
+			this.isSuspended = true;			// next tick will be last
 			if (this.raf_id !== -1 && caf)		// note: CocoonJS does not implement cancelAnimationFrame
 				caf(this.raf_id);
 			if (this.timeout_id !== -1)
@@ -4913,6 +4964,14 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			t = this.types_by_index[i];
 			if (t.onAppBegin)
 				t.onAppBegin();
+		}
+		if (document["hidden"] || document["webkitHidden"] || document["mozHidden"] || document["msHidden"])
+		{
+			window["cr_setSuspended"](true);		// stop rendering
+		}
+		else
+		{
+			this.tick(false);
 		}
 		if (this.isDirectCanvas)
 			AppMobi["webview"]["execute"]("onGameReady();");
@@ -15668,6 +15727,10 @@ cr.plugins_.Browser = function(runtime)
 	{
 		return true;
 	};
+	Cnds.prototype.PageVisible = function ()
+	{
+		return !this.runtime.isSuspended;
+	};
 	Cnds.prototype.OnPageVisible = function ()
 	{
 		return true;
@@ -19282,11 +19345,11 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Button,
 	cr.plugins_.Function,
 	cr.plugins_.CSS_import,
-	cr.plugins_.List,
-	cr.plugins_.JSON_plus_plus,
-	cr.plugins_.Text,
 	cr.plugins_.TextBox,
+	cr.plugins_.JSON_plus_plus,
 	cr.plugins_.NodeWebkit,
+	cr.plugins_.Text,
+	cr.plugins_.List,
 	cr.plugins_.C2WebSocket,
 	cr.system_object.prototype.cnds.OnLayoutStart,
 	cr.plugins_.Browser.prototype.acts.ExecJs,
@@ -19355,5 +19418,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.List.prototype.exps.BBoxBottom,
 	cr.plugins_.TextBox.prototype.exps.BBoxRight,
 	cr.system_object.prototype.cnds.PickByComparison,
-	cr.plugins_.Button.prototype.exps.Y
+	cr.plugins_.Button.prototype.exps.Y,
+	cr.plugins_.Function.prototype.cnds.CompareParam
 ];};

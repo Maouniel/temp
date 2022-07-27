@@ -93,7 +93,10 @@
 			cr_createRuntime("c2canvas");
 		});
 		
-
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
 		
 		function OnRegisterSWError(e)
 		{
