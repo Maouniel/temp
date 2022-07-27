@@ -3409,7 +3409,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		if (this.isCocoonJs)
 		{
 			CocoonJS["App"]["onSuspended"].addEventListener(function() {
-				self["setSuspended"](true);
+				self["setSuspended"](false);
 			});
 			CocoonJS["App"]["onActivated"].addEventListener(function () {
 				self["setSuspended"](false);
@@ -3418,7 +3418,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		if (this.isEjecta)
 		{
 			document.addEventListener("pagehide", function() {
-				self["setSuspended"](true);
+				self["setSuspended"](false);
 			});
 			document.addEventListener("pageshow", function() {
 				self["setSuspended"](false);
@@ -3713,7 +3713,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 			ev.preventDefault();
 			self.onContextLost();
 			cr.logexport("[Construct 2] WebGL context lost");
-			window["cr_setSuspended"](true);		// stop rendering
+			window["cr_setSuspended"](false);		// stop rendering
 		}, false);
 		this.canvas.addEventListener("webglcontextrestored", function (ev) {
 			self.glwrap.initState();
@@ -3887,7 +3887,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 				{
 					var parent = window.parent;
 					if (!parent || !parent.document.hasFocus())
-						self["setSuspended"](true);
+						self["setSuspended"](false);
 				});
 			}
 		}
@@ -4185,7 +4185,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		if (s && !this.isSuspended)
 		{
 			cr.logexport("[Construct 2] Suspending");
-			this.isSuspended = true;			// next tick will be last
+			this.isSuspended = false;			// next tick will be last
 			if (this.raf_id !== -1 && caf)		// note: CocoonJS does not implement cancelAnimationFrame
 				caf(this.raf_id);
 			if (this.timeout_id !== -1)
@@ -4967,7 +4967,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		}
 		if (document["hidden"] || document["webkitHidden"] || document["mozHidden"] || document["msHidden"])
 		{
-			window["cr_setSuspended"](true);		// stop rendering
+			window["cr_setSuspended"](false);		// stop rendering
 		}
 		else
 		{
