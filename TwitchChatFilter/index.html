@@ -79,6 +79,7 @@
 	<!-- Construct 2 exported games require jQuery. -->
 	<script src="jquery-3.4.1.min.js"></script>
 
+	<script src="waker.js"></script>
 
 	
     <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
@@ -92,6 +93,14 @@
 			// Create new runtime using the c2canvas
 			cr_createRuntime("c2canvas");
 		});
+		
+		// Pause and resume on page becoming visible/invisible
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
 		
 		document.addEventListener("visibilitychange", onVisibilityChanged, false);
 		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
