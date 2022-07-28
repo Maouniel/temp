@@ -19506,10 +19506,10 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.CSS_import,
 	cr.plugins_.Function,
 	cr.plugins_.JSON_plus_plus,
-	cr.plugins_.Rex_Waker,
-	cr.plugins_.Text,
 	cr.plugins_.List,
 	cr.plugins_.NodeWebkit,
+	cr.plugins_.Rex_Waker,
+	cr.plugins_.Text,
 	cr.plugins_.TextBox,
 	cr.plugins_.C2WebSocket,
 	cr.system_object.prototype.cnds.OnLayoutStart,
@@ -19561,6 +19561,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.JSON_plus_plus.prototype.cnds.OnComplete,
 	cr.plugins_.JSON_plus_plus.prototype.exps.GetValue,
 	cr.system_object.prototype.exps.replace,
+	cr.plugins_.Browser.prototype.acts.ConsoleLog,
 	cr.system_object.prototype.exps.regexsearch,
 	cr.plugins_.Function.prototype.cnds.OnFunction,
 	cr.plugins_.Function.prototype.exps.Param,
@@ -19580,6 +19581,5 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.TextBox.prototype.exps.BBoxRight,
 	cr.system_object.prototype.cnds.PickByComparison,
 	cr.plugins_.Button.prototype.exps.Y,
-	cr.plugins_.Function.prototype.cnds.CompareParam,
-	cr.plugins_.AJAX.prototype.cnds.OnAnyError
+	cr.plugins_.Function.prototype.cnds.CompareParam
 ];};
