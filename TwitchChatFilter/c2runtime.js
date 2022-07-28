@@ -19541,6 +19541,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.C2WebSocket.prototype.acts.Send,
 	cr.plugins_.Text.prototype.acts.SetText,
 	cr.system_object.prototype.acts.Wait,
+	cr.plugins_.Button.prototype.cnds.IsChecked,
 	cr.plugins_.C2WebSocket.prototype.cnds.OnError,
 	cr.plugins_.C2WebSocket.prototype.exps.ErrorMsg,
 	cr.plugins_.C2WebSocket.prototype.cnds.OnClosed,
@@ -19552,12 +19553,11 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.regexmatchat,
 	cr.system_object.prototype.exps.newline,
 	cr.system_object.prototype.exps.regexreplace,
-	cr.plugins_.Button.prototype.cnds.IsChecked,
 	cr.plugins_.TextBox.prototype.exps.Text,
 	cr.system_object.prototype.exps.left,
 	cr.system_object.prototype.cnds.RegexTest,
 	cr.system_object.prototype.acts.StopLoop,
-	cr.plugins_.JSON_plus_plus.prototype.acts.LoadJSON,
+	cr.plugins_.JSON_plus_plus.prototype.acts.SetJSON,
 	cr.plugins_.JSON_plus_plus.prototype.cnds.OnComplete,
 	cr.plugins_.JSON_plus_plus.prototype.exps.GetValue,
 	cr.system_object.prototype.exps.replace,
@@ -19580,5 +19580,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.TextBox.prototype.exps.BBoxRight,
 	cr.system_object.prototype.cnds.PickByComparison,
 	cr.plugins_.Button.prototype.exps.Y,
-	cr.plugins_.Function.prototype.cnds.CompareParam
+	cr.plugins_.Function.prototype.cnds.CompareParam,
+	cr.plugins_.AJAX.prototype.cnds.OnAnyError
 ];};
