@@ -20008,8 +20008,11 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.TextBox.prototype.exps.BBoxRight,
 	cr.system_object.prototype.cnds.PickByComparison,
 	cr.plugins_.Button.prototype.exps.Y,
+	cr.plugins_.Browser.prototype.acts.ConsoleLog,
 	cr.plugins_.Function.prototype.exps.Param,
 	cr.plugins_.TextBox.prototype.acts.ScrollToBottom,
+	cr.plugins_.AJAX.prototype.cnds.OnAnyComplete,
+	cr.plugins_.AJAX.prototype.cnds.OnAnyError,
 	cr.plugins_.C2WebSocket.prototype.cnds.OnError,
 	cr.plugins_.C2WebSocket.prototype.exps.ErrorMsg,
 	cr.plugins_.Keyboard.prototype.cnds.OnKey
