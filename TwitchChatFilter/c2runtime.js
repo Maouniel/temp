@@ -19989,7 +19989,6 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.cnds.CompareVar,
 	cr.plugins_.AJAX.prototype.acts.SetHeader,
 	cr.plugins_.AJAX.prototype.acts.Post,
-	cr.system_object.prototype.acts.Wait,
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Function.prototype.cnds.OnFunction,
 	cr.plugins_.TiledBg.prototype.acts.SetPos,
