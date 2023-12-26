@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Гирлянда</title>
+    <style>
+      html,
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      img[id^="lamp_light_"] {
+        animation: hue-anim 60s infinite;
+      }
+
+      @keyframes hue-anim {
+        from {
+          filter: sepia(1) saturate(5) hue-rotate(0deg);
+        }
+        to {
+          filter: sepia(1) saturate(5) hue-rotate(360deg);
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 1920px; height: 200px; position: absolute; outline: 0px solid #ff0000; overflow: hidden; perspective: 800px;">
+      <img id="garland" src="./img/garland.png" style="position: absolute; opacity: 1; z-index: 1; height: 17px; width: 1920px; transform: matrix(1, 0, 0, 1, 0, 45);">
+      <img id="lamp_1" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99254, -0.12186, 0.12186, 0.99254, -22, 11);">
+      <img id="lamp_2" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 47, 13);">
+      <img id="lamp_3" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99756, -0.06975, 0.06975, 0.99756, 131, 2);">
+      <img id="lamp_4" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99756, 0.06975, -0.06975, 0.99756, 227, 16);">
+      <img id="lamp_5" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.96592, 0.25881, -0.25881, 0.96592, 312, 3);">
+      <img id="lamp_6" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99452, 0.10452, -0.10452, 0.99452, 397, 17);">
+      <img id="lamp_7" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99619, -0.08715, 0.08715, 0.99619, 489, 3);">
+      <img id="lamp_8" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99984, -0.01745, 0.01745, 0.99984, 598, 17);">
+      <img id="lamp_9" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99862, 0.05233, -0.05233, 0.99862, 681, 3);">
+      <img id="lamp_10" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99984, 0.01745, -0.01745, 0.99984, 775, 19);">
+      <img id="lamp_11" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99254, 0.12186, -0.12186, 0.99254, 856, 3);">
+      <img id="lamp_12" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.9848, -0.17364, 0.17364, 0.9848, 939, 15);">
+      <img id="lamp_13" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99026, 0.13917, -0.13917, 0.99026, 1027, 3);">
+      <img id="lamp_14" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(1, 0, 0, 1, 1125, 18);">
+      <img id="lamp_15" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99862, 0.05233, -0.05233, 0.99862, 1215, 3);">
+      <img id="lamp_16" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99984, -0.01745, 0.01745, 0.99984, 1311, 16);">
+      <img id="lamp_17" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99619, -0.08715, 0.08715, 0.99619, 1397, 3);">
+      <img id="lamp_18" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 1486, 16);">
+      <img id="lamp_19" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.98768, 0.15643, -0.15643, 0.98768, 1587, 3);">
+      <img id="lamp_20" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99862, -0.05233, 0.05233, 0.99862, 1663, 16);">
+      <img id="lamp_21" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(1, 0, 0, 1, 1743, 3);">
+      <img id="lamp_22" src="./img/lamp_light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99756, 0.06975, -0.06975, 0.99756, 1818, 12);">
+	  
+      <img id="lamp_light_1" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99254, -0.12186, 0.12186, 0.99254, -22, 11);">
+      <img id="lamp_light_2" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 47, 13);">
+      <img id="lamp_light_3" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99756, -0.06975, 0.06975, 0.99756, 131, 2);">
+      <img id="lamp_light_4" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99756, 0.06975, -0.06975, 0.99756, 227, 16);">
+      <img id="lamp_light_5" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.96592, 0.25881, -0.25881, 0.96592, 312, 3);">
+      <img id="lamp_light_6" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99452, 0.10452, -0.10452, 0.99452, 397, 17);">
+      <img id="lamp_light_7" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99619, -0.08715, 0.08715, 0.99619, 489, 3);">
+      <img id="lamp_light_8" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99984, -0.01745, 0.01745, 0.99984, 598, 17);">
+      <img id="lamp_light_9" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99862, 0.05233, -0.05233, 0.99862, 681, 3);">
+      <img id="lamp_light_10" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99984, 0.01745, -0.01745, 0.99984, 775, 19);">
+      <img id="lamp_light_11" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99254, 0.12186, -0.12186, 0.99254, 856, 3);">
+      <img id="lamp_light_12" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.9848, -0.17364, 0.17364, 0.9848, 939, 15);">
+      <img id="lamp_light_13" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99026, 0.13917, -0.13917, 0.99026, 1027, 3);">
+      <img id="lamp_light_14" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(1, 0, 0, 1, 1125, 18);">
+      <img id="lamp_light_15" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99862, 0.05233, -0.05233, 0.99862, 1215, 3);">
+      <img id="lamp_light_16" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99984, -0.01745, 0.01745, 0.99984, 1311, 16);">
+      <img id="lamp_light_17" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99619, -0.08715, 0.08715, 0.99619, 1397, 3);">
+      <img id="lamp_light_18" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99939, 0.03489, -0.03489, 0.99939, 1486, 16);">
+      <img id="lamp_light_19" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.98768, 0.15643, -0.15643, 0.98768, 1587, 3);">
+      <img id="lamp_light_20" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99862, -0.05233, 0.05233, 0.99862, 1663, 16);">
+      <img id="lamp_light_21" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(1, 0, 0, 1, 1743, 3);">
+      <img id="lamp_light_22" src="./img/light.png" style="position: absolute; opacity: 1; z-index: 2; height: 128px; width: 120px; transform: matrix(0.99756, 0.06975, -0.06975, 0.99756, 1818, 12);">
+    </div>
+  </body>
+</html>
