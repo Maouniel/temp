@@ -19589,19 +19589,19 @@ cr.plugins_.TiledBg = function(runtime)
 	pluginProto.exps = new Exps();
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.AJAX,
 	cr.plugins_.Browser,
 	cr.plugins_.Button,
 	cr.plugins_.CSS_import,
 	cr.plugins_.Function,
 	cr.plugins_.TextBox,
-	cr.plugins_.Keyboard,
 	cr.plugins_.TiledBg,
-	cr.plugins_.Rex_Waker,
+	cr.plugins_.NodeWebkit,
 	cr.plugins_.List,
 	cr.plugins_.Text,
-	cr.plugins_.NodeWebkit,
+	cr.plugins_.Keyboard,
+	cr.plugins_.Rex_Waker,
 	cr.plugins_.C2WebSocket,
+	cr.plugins_.AJAX,
 	cr.system_object.prototype.cnds.OnLayoutStart,
 	cr.system_object.prototype.acts.SetVar,
 	cr.system_object.prototype.exps.regexmatchat,
