@@ -1,7 +1,5 @@
 <html>
-<body>
-	<p id="result">Placeholder</p>
-	
+<head>
 	<script>
 		const URL_PARAMS = new URLSearchParams(window.location.search);
 		const USER = URL_PARAMS.get('user');
@@ -17,8 +15,11 @@
 						(COMMAND.charCodeAt(0)+COMMAND.charCodeAt(1))/2+
 						(QUERY.charCodeAt(0)+QUERY.charCodeAt(1))/2
 					)/DATE%1;
-					
-		document.getElementById("result").innerHTML = RNG;
+		function rewrite() {
+		document.open();
+		document.write(RNG);
+		document.close();}
 	</script>
-</body>
+</head>
+<body onload="rewrite()"></body>
 </html>
