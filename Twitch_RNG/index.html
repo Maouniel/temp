@@ -1,0 +1,24 @@
+<html>
+<body>
+	<p id="result">Placeholder</p>
+	
+	<script>
+		const URL_PARAMS = new URLSearchParams(window.location.search);
+		const USER = URL_PARAMS.get('user');
+		const COMMAND = URL_PARAMS.get('command');
+		const QUERY = URL_PARAMS.get('query');
+		
+		const MONTH = new Date().getMonth()+1; 
+		const DAY = new Date().getDate(); 
+		const DATE = parseInt(MONTH+''+DAY);
+		
+		const RNG = (
+						(USER.charCodeAt(0)+USER.charCodeAt(1))/2+
+						(COMMAND.charCodeAt(0)+COMMAND.charCodeAt(1))/2+
+						(QUERY.charCodeAt(0)+QUERY.charCodeAt(1))/2
+					)/DATE%1;
+					
+		document.getElementById("result").innerHTML = RNG;
+	</script>
+</body>
+</html>
